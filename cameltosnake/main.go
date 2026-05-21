@@ -3,30 +3,35 @@ package main
 import "fmt"
 
 func CamelToSnake(s string) string {
+	//first start with checking the length of the string
 	if len(s) == 0 {
 		return ""
 	}
+	//run a for loop to check if the string contains two consecutive capital letters or contains any lowercase letters
 	for i := 0; i < len(s); i++ {
 		if s[i] < 'A' ||  (s[i] > 'Z' && s[i] < 'a') || s[i] > 'z' {
 			return s
 		}
+		// start checking from the last character as you come forward
 		if i < len(s)-1 && s[i] >= 'A' && s[i] <= 'Z' && s[i+1] >= 'A' && s[i+1] <= 'Z' {
 			return s
 		}
 	}
+	//checking if the last character is uppercase
 	lastchar := s[len(s) - 1]
 	if lastchar >= 'A' && lastchar <= 'Z' {
 		return s
 	}
-	result := ""
-	for i := 0; i < len(s); i++ {
-		if s[i] >= 'A' && s[i] <= 'Z' {
-			if i != 0 {
-				result += "_"
+	//function to change the camel case to snake case
+	result := "" // create an empty varibale to store the result
+	for i := 0; i < len(s); i++ { // then loop through the string
+		if s[i] >= 'A' && s[i] <= 'Z' { // check if the string contains capital letters
+			if i != 0 { // if there is no capital letters at index 0 then put an underscore '_'
+				result += "_" // return the result '_'
 			}
-			result += string(s[i] + 32)
+			result += string(s[i] + 32) //if it is capital convert to lowercase
 		} else {
-			result += string(s[i])
+			result += string(s[i]) // else return the string as it is
 		}
 	}
 	return result
@@ -47,7 +52,7 @@ func main() {
     If the string is camelCase, return the snake_case version of the string.
 
 For this exercise you need to know that camelCase has two different writing alternatives that will be accepted:
-
+acquired
     lowerCamelCase
     UpperCamelCase
 

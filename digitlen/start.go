@@ -3,12 +3,15 @@ package main
 import "fmt"
 
 func DigitLen(n, base int) int {
+	//check if the base number is less than or greater than 36
 	if base < 2 || base > 36 {
 		return -1
 	}
+	// convert a negative number to a positive number
 	if n < 0 {
 		n = -n
 	}
+	//start the count at index 0
 	count := 0
 	for n > 0 {
 		n = n/base

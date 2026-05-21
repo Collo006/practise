@@ -3,21 +3,23 @@ package main
 import "fmt"
 
 func RepeatAlpha(s string) string {
+	//create an empty variable
 	result := ""
+	//loop through the whole string
 	for i := 0; i < len(s); i++ {
-		brenda := s[i]
-		if (brenda >= 'a' && brenda <= 'z') {
-			position := int(brenda - 'a' +1)
+		char := s[i]
+		if (char >= 'a' && char <= 'z') { // check if the character is a letter
+			position := int(char - 'a' +1) // find the position of the character
 			for j := 0; j < position; j++ {
-				result += string(brenda)
+				result += string(char)
 			}
-		} else if (brenda >= 'A' && brenda <= 'Z') {
-           position := int(brenda - 'A' + 1)
+		} else if (char >= 'A' && char <= 'Z') {
+           position := int(char - 'A' + 1)
 		   for j :=0; j <position; j++ {
-			result += string(brenda)
+			result += string(char)
 		   }
-		} else {
-			 result += string(brenda)
+		} else { 
+			 result += string(char) // if the character is not an alphabet return the character
 		}
 	}
 	return result

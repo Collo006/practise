@@ -5,7 +5,7 @@ import (
 )
 
 func HashCode(dec string) string {
-	
+	// store the results in an empty array
 	result := ""
 	
 	for i := 0; i <  len(dec); i++ {
@@ -16,8 +16,9 @@ func HashCode(dec string) string {
 		if hash < 33 {
 			hash += 33
 		}
+		// return the result as a string
 		result += string(hash)
-	}length
+	}
 	return result
 }
 

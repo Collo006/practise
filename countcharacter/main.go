@@ -9,6 +9,7 @@ import "fmt"
 
 
 func CountChar(str string, c rune) int {
+	//create a varibale to store the first index 0
 	 count := 0
 	for _, char := range str {
 		if char == c {

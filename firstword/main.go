@@ -8,16 +8,16 @@ if len(s) == 0 {
 	return ""
 }
 // we then initialize "i"
-i := 0; 
-for i < len(s) && s[i] != ' ' {
-	i++
+i := len(s)-1; 
+for i > 0 && s[i] != ' ' {
+	i--
 }
-return s[:i]
+return s[i:]
 }
 
 func main(){
 	fmt.Println(firstWord("Hello World"))
-	fmt.Println(firstWord(""))
+	fmt.Println(firstWord("come home"))
 
 }
 

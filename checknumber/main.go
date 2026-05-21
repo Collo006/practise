@@ -4,16 +4,16 @@ import "fmt"
 
 func CheckNumber(arg string) bool {
 
-	if arg >= "0" && arg <= "9" {
-		return true
-	} else {
-		return false
+	for _, r := range arg {
+		if r >= '0' && r <= '9' {
+			return true
+		}
 	}
-	
+	return false
 }
 
 func main() {
-	fmt.Println(CheckNumber("9"))
+	fmt.Println(CheckNumber("hello9"))
 		fmt.Println(CheckNumber("a"))
 }
 
